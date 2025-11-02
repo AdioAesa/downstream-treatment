@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOWNSTREAM - Character Breakdown</title>
+    <link rel="icon" type="image/png" href="images/pastor.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .header {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+        }
+
+        .header h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff;
+            letter-spacing: 0.2em;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            color: #888;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .character-section {
+            margin-bottom: 80px;
+        }
+
+        .character-card {
+            background: #111;
+            border-left: 4px solid #444;
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover {
+            border-left-color: #888;
+            background: #181818;
+        }
+
+        .character-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .character-name {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .character-role {
+            font-size: 1.1rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .character-actor {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .character-age {
+            font-size: 0.9rem;
+            color: #666;
+            background: #0a0a0a;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .character-description {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .character-description p,
+        .character-arc p,
+        .character-traits ul,
+        .character-relationships p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .character-traits ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .character-traits li:before {
+            content: "→ ";
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .character-quote {
+            background: #0a0a0a;
+            border-left: 3px solid #444;
+            padding: 20px 30px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #999;
+        }
+
+        .supporting-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .supporting-card {
+            background: #111;
+            padding: 30px;
+            border-top: 2px solid #333;
+        }
+
+        .supporting-card:hover {
+            border-top-color: #666;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 40px 0;
+            padding: 12px 24px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #222;
+            border-color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .character-name {
+                font-size: 2rem;
+            }
+
+            .character-card {
+                padding: 25px;
+            }
+
+            .character-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DOWNSTREAM</h1>
+        <p class="tagline">Character Breakdown</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Visual Treatment</a>
+
+        <div class="character-section">
+            <h2 class="section-title">Lead Characters</h2>
+
+            <!-- Mack Rivers -->
+            <div class="character-card">
+                <div class="character-header">
+                    <div>
+                        <h3 class="character-name">Malcolm "Mack" Rivers</h3>
+                        <p class="character-role">Lead / Pastor</p>
+                        <p class="character-actor">Ricky Burchell</p>
+                    </div>
+                    <div class="character-age">
+                        Age: Late 30s
+                    </div>
+                </div>
+
+                <div class="character-description">
+                    <h4 class="section-title">Character Overview</h4>
+                    <p>A once-beloved small-town pastor whose faith has been shattered by personal tragedy. After losing his wife Shay to a mysterious illness, Mack has become a shell of his former self—going through the motions of ministry while wrestling with profound doubt and guilt. He represents every person who has been failed by the systems meant to protect them.</p>
+                </div>
+
+                <div class="character-quote">
+                    "I told my congregation that God would protect them. That prayer would shield them from harm. But when my wife got sick... when Shay died... no amount of prayer could save her. How can I ask them to believe when I can't anymore?"
+                </div>
+
+                <div class="character-arc">
+                    <h4 class="section-title">Character Arc</h4>
+                    <p><strong>Beginning:</strong> Mack is emotionally numb, sleepwalking through services, avoiding his congregation's questions about Shay's death. He's haunted by the growing number of illnesses in town but refuses to see the pattern.</p>
+                    <p><strong>Middle:</strong> Partnering with Ren forces Mack to confront uncomfortable truths. As evidence of corporate poisoning mounts, he realizes Shay's death wasn't God's will—it was preventable corporate negligence. His rage transforms into purpose.</p>
+                    <p><strong>End:</strong> Mack discovers that seeking truth IS an act of faith. By forcing the world to tell the truth about the poisoning, he finds proof that justice—not passive acceptance—is the highest calling. He becomes a voice for the voiceless.</p>
+                </div>
+
+                <div class="character-traits">
+                    <h4 class="section-title">Key Traits</h4>
+                    <ul>
+                        <li><strong>Grief-stricken:</strong> Shay's death broke something fundamental in him</li>
+                        <li><strong>Conflicted:</strong> Torn between faith and doubt, passivity and action</li>
+                        <li><strong>Protective:</strong> Despite his pain, deeply cares for his congregation</li>
+                        <li><strong>Evolving:</strong> Transforms from passive preacher to active truth-seeker</li>
+                        <li><strong>Authentic:</strong> Refuses to fake faith he doesn't feel anymore</li>
+                    </ul>
+                </div>
+
+                <div class="character-relationships">
+                    <h4 class="section-title">Key Relationships</h4>
+                    <p><strong>Shay (deceased wife):</strong> The ghost that haunts every decision. Her death is the wound that won't heal—until Mack understands it wasn't divine will but human evil.</p>
+                    <p><strong>Ren Cross:</strong> Initially resents Ren's intrusion, but their shared experience of institutional failure creates a powerful bond. Ren's cynicism challenges Mack's remaining faith, while Mack's moral compass grounds Ren's investigation.</p>
+                    <p><strong>Deacon James:</strong> The congregation member who represents the believers Mack feels he's failed. Their relationship tests whether Mack can reconcile truth-seeking with spiritual leadership.</p>
+                </div>
+            </div>
+
+            <!-- Ren Cross -->
+            <div class="character-card">
+                <div class="character-header">
+                    <div>
+                        <h3 class="character-name">Ren Cross</h3>
+                        <p class="character-role">Lead / Investigative Journalist</p>
+                        <p class="character-actor">Kurtis Blow / Ayla Demirci</p>
+                    </div>
+                    <div class="character-age">
+                        Age: Mid 30s
+                    </div>
+                </div>
+
+                <div class="character-description">
+                    <h4 class="section-title">Character Overview</h4>
+                    <p>A disgraced investigative journalist who once exposed corporate corruption for major outlets but was destroyed by a retraction and blacklisting. Brilliant, tenacious, and deeply cynical about institutions—Ren sees the Tennessee water crisis as both a chance for redemption and the story that could restore their reputation. What starts as career ambition becomes a moral crusade.</p>
+                </div>
+
+                <div class="character-quote">
+                    "I've spent ten years watching corporations kill people and call it business. The only thing that ever changes is how much they pay their lawyers. But maybe this time... maybe if we can prove it beyond any doubt... maybe someone will finally give a damn."
+                </div>
+
+                <div class="character-arc">
+                    <h4 class="section-title">Character Arc</h4>
+                    <p><strong>Beginning:</strong> Ren arrives in town as a vulture—someone exploiting tragedy for personal gain. They're excellent at investigation but terrible at human connection, treating sources as means to an end.</p>
+                    <p><strong>Middle:</strong> Partnership with Mack humanizes the story. Ren begins to see the poisoned community members as people, not statistics. The corporate threats escalate, forcing Ren to choose between safety and truth.</p>
+                    <p><strong>End:</strong> Ren realizes that exposing the truth isn't about personal redemption—it's about the victims who deserve justice. They risk everything, including their life, to publish the story that powerful people want buried.</p>
+                </div>
+
+                <div class="character-traits">
+                    <h4 class="section-title">Key Traits</h4>
+                    <ul>
+                        <li><strong>Brilliant investigator:</strong> Can connect dots others miss</li>
+                        <li><strong>Cynical:</strong> Assumes the worst of people and institutions</li>
+                        <li><strong>Isolated:</strong> Professional disgrace left them without allies</li>
+                        <li><strong>Obsessive:</strong> Once on a story, won't let go until truth emerges</li>
+                        <li><strong>Evolving morality:</strong> Moves from selfish to selfless motivations</li>
+                    </ul>
+                </div>
+
+                <div class="character-relationships">
+                    <h4 class="section-title">Key Relationships</h4>
+                    <p><strong>Mack Rivers:</strong> The unlikely partnership that defines the film. Mack's moral clarity challenges Ren's cynicism, while Ren's investigative rigor gives Mack's grief purpose. They become each other's conscience.</p>
+                    <p><strong>Corporate antagonists:</strong> Ren knows how these companies operate—the lawyers, the NDAs, the intimidation. This isn't their first battle with corporate power, but it's the first where they have someone (Mack) to fight alongside.</p>
+                    <p><strong>Former colleagues:</strong> Ghosts of Ren's past career haunt the investigation. Will anyone publish the story? Can Ren be trusted after the retraction?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-section">
+            <h2 class="section-title">Supporting Characters</h2>
+
+            <div class="supporting-characters">
+                <!-- Deacon James -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">Deacon James</h3>
+                    <p class="character-role">Supporting / Congregation Leader</p>
+                    <p class="character-actor">Ayla Demirci / Supporting Cast</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>A pillar of Mack's congregation who represents the faithful trying to understand why God allows suffering. Deacon James is dealing with their own family member's illness, making the investigation deeply personal. They challenge Mack to reconcile his loss of faith with his calling to serve.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Serves as the voice of the community—those who need answers but fear rocking the boat. Their journey mirrors the congregation's: from blind faith in systems to demanding accountability. Deacon James ultimately becomes Mack's bridge back to spiritual leadership, showing that seeking justice IS an act of faith.</p>
+                </div>
+
+                <!-- Shay Rivers -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">Shay Rivers</h3>
+                    <p class="character-role">Deceased / Mack's Wife</p>
+                    <p class="character-actor">Flashbacks / Memories</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>Though deceased before the film begins, Shay's presence permeates every frame. Through flashbacks and Mack's memories, we see a vibrant woman full of life and faith. Her mysterious illness and death are the catalyst that sets everything in motion.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Shay represents the human cost of corporate negligence—a life cut short, a family destroyed, a community poisoned. Her death transforms from seeming tragedy to preventable crime as the truth emerges. She is why Mack fights, the face behind every statistic.</p>
+                </div>
+
+                <!-- Corporate Antagonist -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">Corporate Representatives</h3>
+                    <p class="character-role">Antagonists / System Enforcers</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>Not a single villain but a system of corporate lawyers, PR professionals, and compromised local officials. They represent the banality of evil—people doing their jobs while enabling mass poisoning. Polite, professional, and utterly ruthless in protecting profits.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Create escalating threats: legal intimidation, character assassination, physical danger. They embody the systemic evil that Mack and Ren fight—not monsters, but ordinary people choosing money over lives. Their defeat (or lack thereof) will determine the film's ultimate statement about justice.</p>
+                </div>
+
+                <!-- Local Officials -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">Local Officials</h3>
+                    <p class="character-role">Supporting / Compromised Authority</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>Town mayor, water authority heads, and other officials who have either been bought off or are too afraid to act. They represent the local face of systemic failure—people who should protect the community but instead enable its poisoning.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Force Mack and Ren to realize they can't rely on official channels. Some may experience redemption arcs, choosing truth over comfort. Others remain complicit, showing how ordinary people become part of evil systems through inaction and cowardice.</p>
+                </div>
+
+                <!-- Affected Families -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">The Poisoned</h3>
+                    <p class="character-role">Community Victims</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>A constellation of community members suffering mysterious illnesses, cancer clusters, children with developmental issues. They are the human faces of corporate crime—real people whose lives have been destroyed by contaminated water.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Ground the investigation in human stakes. Every data point Ren uncovers represents a real person Mack knows and cares about. Their suffering transforms the story from abstract corporate evil to visceral human tragedy. They are why the fight matters.</p>
+                </div>
+
+                <!-- Journalists/Allies -->
+                <div class="supporting-card">
+                    <h3 class="character-name" style="font-size: 1.8rem;">Potential Allies</h3>
+                    <p class="character-role">Supporting / Resistance Network</p>
+
+                    <h4 class="section-title">Overview</h4>
+                    <p>Sympathetic journalists, whistleblowing scientists, environmental activists. People who have fought similar battles and can offer guidance, resources, or platforms. They show Mack and Ren they're not alone in this fight.</p>
+
+                    <h4 class="section-title">Role in Story</h4>
+                    <p>Provide hope and tactical support while highlighting how common this battle is. Their presence connects this local Tennessee crisis to national patterns of environmental racism and corporate impunity. They help amplify the truth when it finally emerges.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-section">
+            <h2 class="section-title">Thematic Resonance</h2>
+            <div class="character-card">
+                <h4 class="section-title">Central Theme: Truth as Faith</h4>
+                <p>Both lead characters are seeking proof of something larger than themselves. Mack seeks proof that his faith wasn't misplaced, that there's meaning in suffering. Ren seeks proof that exposing truth can actually change things, that journalism matters. Together, they discover that forcing the world to tell the truth—demanding accountability from the powerful—is itself an act of profound faith.</p>
+
+                <h4 class="section-title">Real-World Parallels</h4>
+                <p>These characters echo real people from Flint, Camp Lejeune, East Palestine, and countless other communities where corporate poisoning has been covered up. The character breakdown reflects real activists, journalists, and community leaders who risk everything to expose environmental crimes. This grounds the thriller in urgent contemporary reality.</p>
+
+                <h4 class="section-title">Casting Notes</h4>
+                <p><strong>Ricky Burchell</strong> brings gravitas and vulnerability to Mack—a man whose strength comes from acknowledging his brokenness. <strong>Kurtis Blow/Ayla Demirci</strong> provides the intensity and intelligence Ren needs, someone who can convey both cynicism and growing moral awakening. The supporting cast, anchored by strong local actors, ensures authenticity and emotional truth.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Visual Treatment</a>
+    </div>
+</body>
+</html>
