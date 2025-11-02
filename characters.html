@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOWNSTREAM - Character Breakdown</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Roboto', sans-serif;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23162447" width="1200" height="400"/><path fill="%231a2a3a" opacity="0.3" d="M0,200 Q300,150 600,200 T1200,200 L1200,400 L0,400 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 40px 60px;
+            text-align: center;
+            border-bottom: 4px solid #1b998b;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d9ff, #1b998b, #00d9ff, transparent);
+        }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(0,217,255,0.5);
+        }
+
+        .subtitle {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.4rem;
+            color: #1b998b;
+            font-weight: 700;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.2rem;
+            color: #1b998b;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-weight: 700;
+            margin: 60px 40px 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1b998b;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: #00d9ff;
+        }
+
+        /* Character Grid */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            padding: 0 40px 40px;
+        }
+
+        .character-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            border: 1px solid #333;
+            border-left: 4px solid #1b998b;
+            padding: 35px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .character-card:hover {
+            border-left-color: #00d9ff;
+            box-shadow: 0 8px 25px rgba(0,217,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .character-name {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.9rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .character-age {
+            color: #1b998b;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .character-description {
+            color: #d0d0d0;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .character-traits {
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-left: 3px solid #00d9ff;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .trait-label {
+            color: #00d9ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .trait-content {
+            color: #b0b0b0;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .role-tag {
+            display: inline-block;
+            background: #1b998b;
+            color: #ffffff;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 15px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .character-card > .role-tag {
+            display: block;
+            text-align: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .role-tag.antagonist {
+            background: #c44536;
+        }
+
+        .role-tag.supporting {
+            background: #4a5568;
+        }
+
+        .contamination-level {
+            display: none;
+        }
+
+        /* Water Divider */
+        .water-divider {
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(27,153,139,0.3) 10%,
+                rgba(27,153,139,0.8) 50%,
+                rgba(27,153,139,0.3) 90%,
+                transparent);
+            margin: 60px 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            text-align: center;
+            padding: 50px 40px;
+            margin-top: 80px;
+            border-top: 3px solid #1b998b;
+            color: #808080;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer strong {
+            color: #1b998b;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+        }
+
+        .footer-tagline {
+            margin-top: 30px;
+            font-style: italic;
+            color: #00d9ff;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px 40px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                margin: 40px 20px 30px;
+            }
+
+            header {
+                padding: 60px 20px 40px;
+            }
+
+            .water-divider {
+                margin: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DOWNSTREAM</h1>
+            <div class="subtitle">Character Breakdown</div>
+        </header>
+
+        <div class="section-title">Lead Characters</div>
+
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="contamination-level high">★</div>
+                <div class="character-name">Malcolm "Mack" Rivers</div>
+                <div class="character-age">42 years old</div>
+                <div class="character-description">
+                    Former pastor turned reluctant activist. Hollowed by grief after his wife Shay's death from pancreatic cancer, Mack abandons his faith and pulpit in a devastating public breakdown. His journey from spiritual leader to truth-seeker is fueled by rage, guilt, and the desperate need to give Shay's death meaning.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Arc:</div>
+                    <div class="trait-content">From broken believer seeking divine answers to secular warrior finding purpose in earthly justice</div>
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Core Wound:</div>
+                    <div class="trait-content">Watched his wife die while praying for miracles that never came</div>
+                </div>
+                <span class="role-tag">Protagonist</span>
+            </div>
+
+            <div class="character-card">
+                <div class="contamination-level">★</div>
+                <div class="character-name">Ren Cross</div>
+                <div class="character-age">28 years old</div>
+                <div class="character-description">
+                    Environmental journalist with a tarnished reputation. Fired from Seattle Times after a source fabricated evidence, she's one mistake away from career obliteration. Returns to Tennessee following her grandmother's cancer death—the spark that reveals Summertown's toxic secret. Sharp, driven, and desperate to prove her integrity.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Style:</div>
+                    <div class="trait-content">Black-framed glasses, Sonic Youth t-shirts, scuffed leather boots—grunge meets investigative journalism</div>
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Core Wound:</div>
+                    <div class="trait-content">Professional disgrace and grandmother's preventable death</div>
+                </div>
+                <span class="role-tag">Protagonist</span>
+            </div>
+        </div>
+
+        <div class="water-divider"></div>
+
+        <div class="section-title">The Opposition</div>
+
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="character-name">Deacon James</div>
+                <div class="character-age">60s</div>
+                <div class="character-description">
+                    Church deacon. Warns Mack to stop investigating, prioritizes "protecting the church" over truth. Represents institutional gatekeeping and misplaced loyalty.
+                </div>
+                <span class="role-tag supporting">Institutional Obstacle</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Victoria Lang</div>
+                <div class="character-age">40s</div>
+                <div class="character-description">
+                    Tanner Industries General Counsel. The film's most morally complex antagonist. Reveals her father died from plant-related lung cancer, yet defends Tanner because they pay for her daughter's insulin and mother's nursing home. Cold professionalism masking profound self-loathing. Represents systemic complicity: good people trapped in bad systems.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Defining Moment:</div>
+                    <div class="trait-content">"Your job is killing us!" / "I know." (quiet admission of guilt)</div>
+                </div>
+                <span class="role-tag antagonist">Corporate Defense</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Sheriff Wade</div>
+                <div class="character-age">50s</div>
+                <div class="character-description">
+                    Weathered local sheriff. Refuses to investigate harassment or threats against Mack and Ren. The film's most overt corrupt official—literally phones Tanner after Mack leaves: "You want him gone, you'll have to do it yourself." Bought and paid for, protecting corporate interests over citizens.
+                </div>
+                <span class="role-tag antagonist">Corrupt Authority</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Tanner Security / Process Servers</div>
+                <div class="character-age">Various</div>
+                <div class="character-description">
+                    Black SUV surveillance teams, armed private security, process servers delivering $5M lawsuits. Faceless corporate intimidation apparatus. They block roads, break into motel rooms, commit vandalism as threats. The banality of evil: just following orders, cashing checks.
+                </div>
+                <span class="role-tag antagonist">Corporate Enforcers</span>
+            </div>
+        </div>
+
+        <div class="water-divider"></div>
+
+        <div class="section-title">The Contaminated Community</div>
+
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="contamination-level high">†</div>
+                <div class="character-name">Dale Cooper</div>
+                <div class="character-age">54 years old</div>
+                <div class="character-description">
+                    Riverside Motel owner. Stage 3 lung cancer, never smoked. Trembling hands, blood-flecked coughs, grayish skin. Provides the testimonial heart of the investigation. Dies before cleanup begins, but his final wish—"Make them know my name"—becomes the rallying cry.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Legacy:</div>
+                    <div class="trait-content">Name engraved at EPA memorial site; story published nationally</div>
+                </div>
+                <span class="role-tag supporting">Victim / Witness</span>
+            </div>
+
+            <div class="character-card">
+                <div class="contamination-level medium">◆</div>
+                <div class="character-name">Carl Hobbs</div>
+                <div class="character-age">70s</div>
+                <div class="character-description">
+                    Community elder on constant oxygen. Wheezing, persistent cough, but possesses fire-in-belly determination. Organizes community meetings, spearheads class action lawsuit, and becomes the grassroots leader when institutional help fails. Post-cleanup: lungs improve, no longer needs oxygen.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Transformation:</div>
+                    <div class="trait-content">From oxygen-dependent victim to symbol of community resilience</div>
+                </div>
+                <span class="role-tag supporting">Community Leader</span>
+            </div>
+
+            <div class="character-card">
+                <div class="contamination-level high">†</div>
+                <div class="character-name">Shay Rivers</div>
+                <div class="character-description">
+                    Mack's wife. Pancreatic cancer, Stage 4. Her death is the inciting incident that breaks Mack's faith and reveals the pattern. Though she never appears alive on screen, her presence haunts every frame—wedding photos, prayer journal entries, the empty church pew, the contaminated well water she drank daily.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Narrative Function:</div>
+                    <div class="trait-content">The ghost driving the entire investigation; love made corporeal through grief</div>
+                </div>
+                <span class="role-tag supporting">Catalyst</span>
+            </div>
+
+            <div class="character-card">
+                <div class="contamination-level medium">◆</div>
+                <div class="character-name">Dr. Thomas Hayes</div>
+                <div class="character-age">50s</div>
+                <div class="character-description">
+                    Summertown's only physician. Exhausted, kind, morally conflicted. Keeps meticulous records of 47 cancer cases in 18 months—8x the expected rate. Risks his practice and livelihood by providing anonymized medical data. His locked drawer contains the smoking gun: proof the county ignored his warnings 6 months prior.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Moral Conflict:</div>
+                    <div class="trait-content">"I have a family" vs. "People are dying"—chooses conscience</div>
+                </div>
+                <span class="role-tag supporting">Whistleblower</span>
+            </div>
+
+            <div class="character-card">
+                <div class="contamination-level">◆</div>
+                <div class="character-name">Mrs. Patterson</div>
+                <div class="character-age">70s</div>
+                <div class="character-description">
+                    Church elder. Lost her husband to "kidney failure" (likely contamination). Initially skeptical of Mack's investigation, she represents the community's reluctance to confront painful truths. Her public testimony at the EPA hearing is devastating and pivotal.
+                </div>
+                <span class="role-tag supporting">Community Voice</span>
+            </div>
+        </div>
+
+        <div class="water-divider"></div>
+
+        <div class="section-title">Institutional Figures</div>
+
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="character-name">Richard Bain</div>
+                <div class="character-age">40s</div>
+                <div class="character-description">
+                    EPA Environmental Protection Division attorney. Professional, strategic, operates within bureaucratic constraints. Subtly guides Ren toward public exposure: "Public attention often accelerates bureaucratic processes." Uses media pressure to force EPA action. Represents good actors inside broken systems.
+                </div>
+                <div class="character-traits">
+                    <div class="trait-label">Key Action:</div>
+                    <div class="trait-content">Classifies site as "imminent hazard," orders immediate cleanup</div>
+                </div>
+                <span class="role-tag supporting">Institutional Ally</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Marcus</div>
+                <div class="character-age">40s</div>
+                <div class="character-description">
+                    Ren's editor. Tough, pragmatic, gives Ren "one last chance" after Seattle debacle. Demands bulletproof sourcing: "Every fact checked. Every source verified. I'm not losing MY job because you got burned twice." Publishes despite $5M lawsuit threat.
+                </div>
+                <span class="role-tag supporting">Editorial Authority</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Bill Baxter</div>
+                <div class="character-age">60s</div>
+                <div class="character-description">
+                    Environmental lawyer from Baxter & Klein (Ohio). Sued Tanner in 1987, won. Takes Summertown case on contingency. Appears via video call at community meeting, provides legal expertise and hope. Secures $47M settlement divided among 53 families (~$900K each).
+                </div>
+                <span class="role-tag supporting">Legal Champion</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Reverend Thomas</div>
+                <div class="character-age">60s</div>
+                <div class="character-description">
+                    Visiting pastor filling Mack's role after resignation. Kind face, traditional delivery, doesn't understand the town's trauma. Represents faith as usual when crisis demands radical action. Not antagonistic, just inadequate to the moment.
+                </div>
+                <span class="role-tag supporting">Religious Figure</span>
+            </div>
+        </div>
+
+        <div class="water-divider"></div>
+
+        <div class="section-title">Symbolic Presences</div>
+
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="character-name">Richard Tanner</div>
+                <div class="character-age">40s</div>
+                <div class="character-description">
+                    Tanner Industries CEO. <strong>Notably absent</strong> from the entire film—never appears in person, only through legal proxies and corporate statements. His absence is deliberate: the facelessness of corporate evil, the impossibility of confronting the truly powerful. The ghost at the feast.
+                </div>
+                <span class="role-tag antagonist">Absent Patriarch</span>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">Ren's Grandmother</div>
+                <div class="character-age">Deceased</div>
+                <div class="character-description">
+                    Only appears in sun-faded photo in Ren's car visor: young Ren (18) with grandmother at Tennessee farmhouse. Lung cancer, never smoked. Her death brings Ren back to Tennessee and provides the personal stake that drives investigative obsession. Parallel to Shay—love converted to action through loss.
+                </div>
+                <span class="role-tag supporting">Catalyst</span>
+            </div>
+        </div>
+
+        <div class="water-divider"></div>
+
+        <footer>
+            <p><strong>DOWNSTREAM</strong></p>
+            <p>Written by Ayla Demirci</p>
+            <p>WGA Registration #I381100</p>
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="index.html" style="color: #1b998b; text-decoration: none; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Treatment</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
